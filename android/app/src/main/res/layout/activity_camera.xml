@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:keepScreenOn="true"
+        app:cameraAudio="on"
+        app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"
+        app:cameraEngine="camera2"
+        app:cameraExperimental="true"
+        app:cameraFacing="back"
+        app:cameraFlash="auto"
+        app:cameraGestureLongTap="none"
+        app:cameraGesturePinch="zoom"
+        app:cameraGestureScrollHorizontal="filterControl1"
+        app:cameraGestureScrollVertical="exposureCorrection"
+        app:cameraGestureTap="autoFocus"
+        app:cameraGrid="off"
+        app:cameraMode="picture"
+        app:cameraPlaySounds="true"
+        app:cameraPreview="glSurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imv_record"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imv_gallery_select"
+            android:layout_width="52dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_gallery_select" />
+
+        <ImageView
+            android:id="@+id/imv_erase_segment"
+            android:layout_width="48dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_erase_segment" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imv_record">
+
+        <ImageView
+            android:id="@+id/imv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_done" />
+
+        <ImageView
+            android:id="@+id/imv_save_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_select_saved" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imv_close"
+        android:layout_width="24dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/imv_flip_camera"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+    <ImageView
+        android:id="@+id/imv_filter"
+        android:layout_width="32dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/imv_flash"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imv_flip_camera"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_filter" />
+
+    <ImageView
+        android:id="@+id/imv_flip_camera"
+        android:layout_width="48dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/imv_filter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imv_close"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_flip_camera" />
+
+
+    <ImageView
+        android:id="@+id/imv_flash"
+        android:layout_width="48dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imv_filter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_flash_off" />
+
+    <ImageView
+        android:id="@+id/imv_record"
+        android:layout_width="76dp"
+        android:layout_height="86dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/camera"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:srcCompat="@drawable/ic_record" />
+
+
+    <!--<androidx.core.widget.NestedScrollView-->
+        <!--android:id="@+id/controls"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@android:color/white"-->
+        <!--android:elevation="4dp"-->
+        <!--app:behavior_hideable="true"-->
+        <!--app:behavior_peekHeight="300dp"-->
+        <!--app:behavior_skipCollapsed="false"-->
+        <!--app:layout_behavior="@string/bottom_sheet_behavior"-->
+        <!--tools:ignore="MissingConstraints">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical" />-->
+    <!--</androidx.core.widget.NestedScrollView>-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
